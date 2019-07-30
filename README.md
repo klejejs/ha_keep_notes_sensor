@@ -9,10 +9,12 @@ Copy `custom_components/keep_notes_sensor` folder to your HA config folder and a
 
 
 To get Google account password, go to [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords). For `Select app` choose `other` and when you are asked for name, write anything. Then copy your password and use it in `password:` field.
+
 **Keep in mind that you will be able to see your created password only once.**
 
 
 To get `list_id`, go to [https://keep.google.com/](https://keep.google.com/) and click on a note you wish to use. Then copy the id from the url. See picture below.
+
 **Note:** Although it is advised to use a list as component is created for that, a simple note will work too.
 <img src="https://github.com/klejejs/ha_keep_notes_sensor/blob/master/keep_url.jpg" alt="Google Keep url" />
 
