@@ -1,5 +1,5 @@
 # ha_keep_notes_sensor
-Google Keep notes sensor to see your notes in Home Assistant
+Google Keep notes sensor to see your notes in Home Assistant. Use together with [lovelace keep-notes-card](https://github.com/klejejs/lovelace-keep-notes-card) to display your notes in lovelace.
 
 <img src="https://github.com/klejejs/ha_keep_notes_sensor/blob/master/keep_notes_sensor.jpg" alt="Keep Notes Sensor" />
 
