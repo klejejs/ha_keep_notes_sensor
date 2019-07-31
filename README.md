@@ -38,6 +38,7 @@ sensor:
 key | type | description
 :--- | :--- | :---
 **platform (Required)** | string | The platform name.
+**name (Required)** | string | Name of the sensor.
 **username (Required)** | string | Your gmail email address.
 **password (Required)** | string | See installation for password.
 **list_id (Required)** | string | See installation for list id.
