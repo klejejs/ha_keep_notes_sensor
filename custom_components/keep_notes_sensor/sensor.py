@@ -12,6 +12,7 @@ _LOGGER = logging.getLogger(__name__)
 
 DOMAIN = 'keep_notes_sensor'
 
+CONF_NAME = 'name'
 CONF_USERNAME = 'username'
 CONF_PASSWORD = 'password'
 CONF_LIST_ID = 'list_id'
@@ -20,6 +21,7 @@ SCAN_INTERVAL = timedelta(seconds=10)
 
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
+    vol.Required(CONF_NAME): cv.string,
     vol.Required(CONF_USERNAME): cv.string,
     vol.Required(CONF_PASSWORD): cv.string,
     vol.Required(CONF_LIST_ID): cv.string
@@ -29,6 +31,7 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     """Set up the Google Keep Notes sensor platform."""
     import gkeepapi
     
+    name = config.get(CONF_NAME)
     username = config.get(CONF_USERNAME)
     password = config.get(CONF_PASSWORD)
     list_id = config.get(CONF_LIST_ID)
@@ -37,12 +40,12 @@ def setup_platform(hass, config, add_devices, discovery_info=None):
     
     keep.login(username, password)
 
-    add_devices([KeepNotesSensor(hass, keep, list_id)])
+    add_devices([KeepNotesSensor(hass, name, keep, list_id)])
 
 class KeepNotesSensor(Entity):
-    def __init__(self, hass, keep, list_id):
+    def __init__(self, hass, name, keep, list_id):
         self.hass = hass
-        self._name = 'keep_notes_sensor'
+        self._name = name
         self._state = None
         self._keep = keep
         self._listid = list_id
