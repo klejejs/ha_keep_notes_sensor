@@ -28,6 +28,7 @@ To get `list_id`, go to [https://keep.google.com/](https://keep.google.com/) and
 ```yaml
 sensor:
   platform: keep_notes_sensor
+  name: "keep_sensor"
   username: "example@example.com"
   password: "emailpassword"
   list_id: "1Ap2XOoT4W4GT8-kSCpvyrDllnwwSFLupBAyjFMcnaZ-PtcW8OwG_rux_2oLPJf878qkm"
