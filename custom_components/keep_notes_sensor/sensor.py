@@ -76,9 +76,12 @@ class KeepNotesSensor(Entity):
         self._state = 'login successful'
 
         name = gnote.title
-        glist_items = gnote.items
         self.hass.data[self._name]['notes'] = {}
         self.hass.data[self._name]['notes']['name'] = name
         self.hass.data[self._name]['notes']['data'] = []
-        for item in glist_items:
-            self.hass.data[self._name]['notes']['data'].append({'text' : item.text , 'checked' : item.checked})
+        try:
+            glist_items = gnote.items
+            for item in glist_items:
+                self.hass.data[self._name]['notes']['data'].append({'text' : item.text , 'checked' : item.checked})
+        except:
+            self.hass.data[self._name]['notes']['data'].append({'text': 'You don\'t have anything in your notes', 'checked': False})
