@@ -4,5 +4,5 @@
   "documentation": "https://www.example.com",
   "dependencies": [],
   "codeowners": ["@klejejs"],
-  "requirements": ["gkeepapi==0.11.14"]
+  "requirements": ["gkeepapi==0.13.1"]
 }
